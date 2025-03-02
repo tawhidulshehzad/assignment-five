@@ -9,24 +9,26 @@ function getTheDate() {
 getTheDate();
 // bg color
 
-
 // blog file
 document.getElementById("blog").addEventListener("click", function () {
   window.location.href = "blog.html";
 });
 
 document.getElementById("bg-color").addEventListener("click", function () {
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-  document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  let allLetters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += allLetters[Math.floor(Math.random() * 16)];
+  }
+  document.body.style.backgroundColor = color;
 });
+
+// main functions
 
 const taskCounter = document.getElementById("task-counter");
 const headerCounter = document.getElementById("nav-counter");
 const activitySection = document.getElementById("activity-log");
 const historyBtn = document.getElementById("clear-history");
-
 
 const taskNumber = {
   1: "task-1",
@@ -38,32 +40,44 @@ const taskNumber = {
 };
 
 const cardButtons = document.querySelectorAll(".complete-task");
-let taskCount = parseInt(taskCounter.innerText);
-let navRightCount = parseInt(headerCounter.innerText);
+let taskCount = parseInt(taskCounter.innerText) || 0;
+let navRightCount = parseInt(headerCounter.innerText) || 0;
 let btnHittingCount = 0;
 
 // Function to update counters
-function updateCounters() {
+function refreshCountes() {
   taskCount--;
   navRightCount++;
   btnHittingCount++;
 
-
   taskCounter.innerText = taskCount;
-  navCounter.innerText = navRightCount;
+  headerCounter.innerText = navRightCount;
 }
 
+//add activity log
+function addActivityLog(assignName) {
+  const time = new Date().toLocaleTimeString();
+  const logEntry = document.createElement("p");
+  logEntry.textContent = `You have completed the task "${assignName}" at ${time}`;
+  logEntry.classList.add(
+    "text-gray-600",
+    "font-semibold",
+    "bg-[#f4f7ff]",
+    "p-4",
+    "rounded-lg",
+    "my-3"
+  );
+  activitySection.appendChild(logEntry);
+}
 
 for (let i = 0; i < cardButtons.length; i++) {
   cardButtons[i].addEventListener("click", function () {
+    
     if (!cardButtons[i].disabled) {
       alert("Board updated successfully");
-
-      updateCounters();
+      refreshCountes();
       cardButtons[i].disabled = true;
       cardButtons[i].style.backgroundColor = "gray";
-
-      
       const assignName = document.getElementById(taskNumber[i + 1]).innerText;
       addActivityLog(assignName);
 
@@ -72,11 +86,9 @@ for (let i = 0; i < cardButtons.length; i++) {
       }
     }
   });
-
 }
 
-// Clear history button 
+// Clear history button
 historyBtn.addEventListener("click", () => {
-  activityLog.innerHTML = "";
+  activitySection.innerHTML = "";
 });
-
