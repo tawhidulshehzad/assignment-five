@@ -17,21 +17,23 @@
     <header>
       <nav>
         <div
-          class="mx-auto w-[1536px] bg-white rounded-[16px] justify-between items-center p-4 flex"
+          class="p-4 w-[1536px] mx-auto bg-white rounded-[16px] flex justify-between items-center"
         >
           <!-- Nav Left side -->
           <div class="flex items-center gap-2">
             <img src="./images/logo.png" alt="" class="w-10 h-10" />
-            <span class="text-xl font-bold">DevBoard</span>
+            <span class="font-bold text-xl">DevBoard</span>
           </div>
 
           <!-- Nav Right Side -->
           <div class="flex items-center gap-4">
             <div
-              class="flex items-center bg-[#F4F7FF] rounded-[32px] px-4 py-2"
+              class="rounded-[32px] px-4 py-2 flex items-center bg-[#F4F7FF]"
             >
               <img src="./images/checkbox.png" alt="" />
-              <span class="ml-2 text-lg font-semibold">23</span>
+              <span id="nav-counter" class="text-lg font-semibold ml-2"
+                >23</span
+              >
             </div>
             <img
               src="./images/theme-btn.png"
@@ -42,10 +44,10 @@
         </div>
       </nav>
     </header>
-    <main class="mx-auto w-[1536px] py-4">
+    <main class="py-4 mx-auto w-[1536px]">
       <div class="flex gap-5">
         <!-- Left side -->
-        <div class="w-3/4 bg-white p-4 rounded-lg">
+        <div class="bg-white p-4 rounded-lg w-3/4">
           <!-- Top Three columns -->
           <div class="grid grid-cols-4 gap-4">
             <div class="flex bg-[#f4f7ff] rounded-lg p-6">
@@ -55,8 +57,8 @@
                 <img src="./images/checkbox.png" alt="" />
               </div>
               <div class="ml-4">
-                <p>Task Assignment</p>
-                <h3 class="font-bold text-2xl">05</h3>
+                <p>Task Assigned</p>
+                <h3 id="task-counter" class="font-bold text-2xl">06</h3>
               </div>
             </div>
 
@@ -78,11 +80,8 @@
               >
                 <img src="./images/calender.png" alt="" />
               </div>
-              <div class="ml-4">
-                <h3>
-                  Wed, <br />
-                  <span class="font-bold text-2xl">Jul 28 2025</span>
-                </h3>
+              <div class="ml-4 font-semibold text-2xl">
+                <h3 id="todays-date">Wed, Jul 28 2025</h3>
               </div>
             </div>
           </div>
@@ -90,13 +89,15 @@
           <!---------------
           Left side buttom columns
           --------------->
-          <div class="grid grid-cols-3 gap-6 mt-6">
+          <div id="task-card-container" class="grid grid-cols-3 gap-6 mt-6">
             <!-- Card-1 -->
             <div class="bg-[#f4f7ff] p-5 rounded-lg flex flex-col gap-5">
               <h3 class="text-gray-600 font-semibold">
                 <span class="bg-white px-2 rounded-sm py-2 px-4">ShopEase</span>
               </h3>
-              <h2 class="text-lg font-bold">Fix Mobile Button Issue</h2>
+              <h2 id="task-1" class="text-lg font-bold">
+                Fix Mobile Button Issue
+              </h2>
               <p class="text-gray-500 bg-white p-4 rounded-sm text-sm">
                 Debug using Chrome DevTools, check for overlapping ...
               </p>
@@ -107,7 +108,7 @@
                   <p class="text-blue-600 font-bold">21 March 2025</p>
                 </div>
                 <button
-                  class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2"
+                  class="complete-task bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
                 >
                   Completed
                 </button>
@@ -118,9 +119,11 @@
               - -- -->
             <div class="bg-[#f4f7ff] p-5 rounded-lg flex flex-col gap-5">
               <h3 class="text-gray-600 font-semibold">
-                <span class="bg-white px-2 rounded-sm py-2 px-4">CloudSync</span>
+                <span class="bg-white px-2 rounded-sm py-2 px-4"
+                  >CloudSync</span
+                >
               </h3>
-              <h2 class="text-lg font-bold">Add Dark Mode</h2>
+              <h2 id="task-2" class="text-lg font-bold">Add Dark Mode</h2>
               <p class="text-gray-500 bg-white p-4 rounded-sm text-sm">
                 Store the user's preference in localStorage, update CSS ...
               </p>
@@ -131,18 +134,18 @@
                   <p class="text-blue-600 font-bold">21 March 2025</p>
                 </div>
                 <button
-                  class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2"
+                  class="complete-task bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
                 >
                   Completed
                 </button>
               </div>
             </div>
             <!-- Card-3 -->
-            <div class="bg-[#f4f7ff] p-5 flex flex-col gap-5 rounded-lg ">
+            <div class="bg-[#f4f7ff] p-5 flex flex-col gap-5 rounded-lg">
               <h3 class="text-gray-600 font-semibold">
                 <span class="bg-white px-2 rounded-sm py-2 px-4">SwiftPay</span>
               </h3>
-              <h2 class="text-lg font-bold">Optimize Home Page</h2>
+              <h2 id="task-3" class="text-lg font-bold">Optimize Home Page</h2>
               <p class="text-gray-500 bg-white p-4 rounded-sm text-sm">
                 Debug using Chrome DevTools, check for overlapping ...
               </p>
@@ -150,10 +153,10 @@
               <div class="flex justify-between">
                 <div>
                   <p class="text-sm text-gray-600 mt-2">Deadline</p>
-                  <p class="text-blue-600 font-bold">21 March 2025</p>
+                  <p class="font-bold text-blue-600">21 March 2025</p>
                 </div>
                 <button
-                  class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2"
+                  class="complete-task bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
                 >
                   Completed
                 </button>
@@ -164,7 +167,7 @@
               <h3 class="text-gray-600 font-semibold">
                 <span class="bg-white px-2 rounded-sm py-2 px-4">Meta</span>
               </h3>
-              <h2 class="text-lg font-bold">Add new emoji 🫶</h2>
+              <h2 id="task-4" class="text-lg font-bold">Add new emoji 🫶</h2>
               <p class="text-gray-500 bg-white p-4 rounded-sm text-sm">
                 Debug using Chrome DevTools, check for overlapping ...
               </p>
@@ -175,7 +178,7 @@
                   <p class="text-blue-600 font-bold">21 March 2025</p>
                 </div>
                 <button
-                  class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2"
+                  class="complete-task bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
                 >
                   Completed
                 </button>
@@ -184,9 +187,13 @@
             <!-- Card-5 -->
             <div class="bg-[#f4f7ff] p-5 rounded-lg flex flex-col gap-5">
               <h3 class="text-gray-600 font-semibold">
-                <span class="bg-white px-2 rounded-sm py-2 px-4">Google LLC</span>
+                <span class="bg-white px-2 rounded-sm py-2 px-4"
+                  >Google LLC</span
+                >
               </h3>
-              <h2 class="text-lg font-bold">Integrate OpenAI API</h2>
+              <h2 id="task-5" class="text-lg font-bold">
+                Integrate OpenAI API
+              </h2>
               <p class="text-gray-500 bg-white p-4 rounded-sm text-sm">
                 Debug using Chrome DevTools, check for overlapping ...
               </p>
@@ -197,7 +204,7 @@
                   <p class="text-blue-600 font-bold">21 March 2025</p>
                 </div>
                 <button
-                  class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2"
+                  class="complete-task bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
                 >
                   Completed
                 </button>
@@ -206,9 +213,13 @@
             <!-- Card-6 -->
             <div class="bg-[#f4f7ff] p-5 rounded-lg flex flex-col gap-5">
               <h3 class="text-gray-600 font-semibold">
-                <span class="bg-white px-2 rounded-sm py-2 px-4">Glassdoor</span>
+                <span class="bg-white px-2 rounded-sm py-2 px-4"
+                  >Glassdoor</span
+                >
               </h3>
-              <h2 class="text-lg font-bold">Improve Job Searching</h2>
+              <h2 id="task-6" class="text-lg font-bold">
+                Improve Job Searching
+              </h2>
               <p class="text-gray-500 bg-white p-4 rounded-sm text-sm">
                 Debug using Chrome DevTools, check for overlapping ...
               </p>
@@ -219,7 +230,7 @@
                   <p class="text-blue-600 font-bold">21 March 2025</p>
                 </div>
                 <button
-                  class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2"
+                  class="complete-task bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
                 >
                   Completed
                 </button>
@@ -229,17 +240,21 @@
         </div>
 
         <!-- Right side -->
-        <div class="w-1/4 bg-white p-4 rounded-lg shadow">
+        <div class="bg-white p-4 rounded-lg w-1/4">
           <div class="flex flex-col items-center gap-3 py-5">
             <div class="flex gap-4 justify-center">
               <div><img src="./images/activity.png" alt="" /></div>
               <h2 class="font-semibold text-lg">Activity Log</h2>
             </div>
             <div>
-              <button class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2">
+              <button
+                id="clear-history"
+                class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
+              >
                 Clear History
               </button>
             </div>
+            <div id="activity-log"></div>
           </div>
         </div>
       </div>
