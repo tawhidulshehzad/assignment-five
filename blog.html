@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBoard</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#f4f7ff]">
+    <header>
+      <nav>
+        <div
+          class="p-4 w-[1536px] mx-auto bg-white rounded-[16px] flex justify-between items-center"
+        >
+          <!-- Nav Left side -->
+          <div class="flex items-center gap-2">
+            <img src="./images/logo.png" alt="" class="w-10 h-10" />
+            <span class="font-bold text-xl">DevBoard</span>
+          </div>
+
+          <!-- Nav Right Side -->
+          <div class="flex items-center gap-4">
+            <div>
+              <button
+                id="desk"
+                class="bg-blue-600 text-white px-4 py-1 rounded-lg mt-2 hover:bg-blue-700 transition duration-300"
+              >
+                Back to desk
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="py-4 mx-auto w-[1536px]">
+      <h1 class="font-bold text-3xl text-center">Blog</h1>
+
+      <h2 class="bg-white rounded-lg p-5 text-2xl my-2">
+        Question 1: What are the different ways to select an element in the DOM?
+      </h2>
+      <p class="bg-white rounded-lg p-5 text-2xl my-2 mb-6">
+        There are several methods for selecting elements in the DOM. Some
+        methods choose elements based on their IDs, classes, tag names, or CSS
+        selectors. Some return a single element, while others return multiple
+        elements.
+      </p>
+      <h2 class="bg-white rounded-lg p-5 text-2xl my-2">
+        Question 2: What is the difference between innerHTML, innerText, and
+        textContent ?
+      </h2>
+      <p class="bg-white rounded-lg p-5 text-2xl my-2 mb-6">
+        innerHTML, innerText, and textContent are properties used to retrieve or
+        modify the content of an HTML element, but they differ significantly.
+        innerHTML: Gets or sets the HTML content within an element, including
+        nested tags and formatting. It parses HTML and can insert or return
+        markup-containing elements. innerText: Returns or sets only the visible
+        text within an element, ignoring any hidden elements or formatting. It
+        takes into account styles such as display:none. TextContent: Retrieves
+        or sets all text within an element, including hidden elements, but does
+        not parse or process HTML tags. It returns the text as it appears in the
+        document structure.
+      </p>
+      <h2 class="bg-white rounded-lg p-5 text-2xl my-2">
+        Question 3: What is event bubbling in the DOM?
+      </h2>
+      <p class="bg-white rounded-lg p-5 text-2xl my-2 mb-6">
+        Event bubbling is a behavior in which an event triggered on a child element spreads upwards to its ancestors.  This means that an event fired on one element can cause events to be fired on its parent elements unless it is stopped.
+      </p>
+      <h2 class="bg-white rounded-lg p-5 text-2xl my-2">
+        Question 4: What is event delegation in the DOM?
+      </h2>
+      <p class="bg-white rounded-lg p-5 text-2xl my-2 mb-6">
+        Event delegation is a technique that involves a parent element listening for events on its child elements.  Instead of attaching event listeners to multiple elements, the event is handled at a higher level via event propagation.
+      </p>
+      <h2 class="bg-white rounded-lg p-5 text-2xl my-2">
+        Question 5: How do you create, add, and remove elements using JavaScript?
+      </h2>
+      <p class="bg-white rounded-lg p-5 text-2xl my-2 mb-6">
+        JavaScript can dynamically manipulate the DOM by creating, adding, and removing elements.  New elements can be created and added to the DOM, while existing elements can be removed when they are no longer required.
+      </p>
+    </main>
+
+    <script>
+      document.getElementById("desk").addEventListener("click", function () {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
