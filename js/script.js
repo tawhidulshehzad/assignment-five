@@ -55,9 +55,9 @@ function refreshCountes() {
 
 //add activity log
 function addActivityLog(assignName) {
-  const time = new Date().toLocaleTimeString();
+  const submitTime = new Date().toLocaleTimeString();
   const newLogAc = document.createElement("p");
-  newLogAc.textContent = `You have completed the task "${assignName}" at ${time}`;
+  newLogAc.textContent = `You have completed the task "${assignName}" at ${submitTime}`;
   newLogAc.classList.add(
     "text-gray-600",
     "font-semibold",
@@ -71,7 +71,6 @@ function addActivityLog(assignName) {
 
 for (let i = 0; i < cardButtons.length; i++) {
   cardButtons[i].addEventListener("click", function () {
-    
     if (!cardButtons[i].disabled) {
       alert("Board updated successfully");
       refreshCountes();
