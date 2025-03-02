@@ -28,7 +28,7 @@ const activitySection = document.getElementById("activity-log");
 const historyBtn = document.getElementById("clear-history");
 
 
-const taskMap = {
+const taskNumber = {
   1: "task-1",
   2: "task-2",
   3: "task-3",
@@ -52,17 +52,19 @@ function updateCounters() {
   taskCounter.innerText = taskCount;
   navCounter.innerText = navRightCount;
 }
+
+
 for (let i = 0; i < cardButtons.length; i++) {
   cardButtons[i].addEventListener("click", function () {
-    if (!this.disabled) {
+    if (!cardButtons[i].disabled) {
       alert("Board updated successfully");
 
       updateCounters();
-      this.disabled = true;
-      this.style.backgroundColor = "gray";
+      cardButtons[i].disabled = true;
+      cardButtons[i].style.backgroundColor = "gray";
 
       
-      const assignName = document.getElementById(taskMap[i + 1]).innerText;
+      const assignName = document.getElementById(taskNumber[i + 1]).innerText;
       addActivityLog(assignName);
 
       if (btnHittingCount === 6) {
@@ -70,5 +72,11 @@ for (let i = 0; i < cardButtons.length; i++) {
       }
     }
   });
+
 }
+
+// Clear history button 
+historyBtn.addEventListener("click", () => {
+  activityLog.innerHTML = "";
+});
 
