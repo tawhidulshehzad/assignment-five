@@ -49,7 +49,6 @@ function refreshCountes() {
   taskCount--;
   navRightCount++;
   btnHittingCount++;
-
   taskCounter.innerText = taskCount;
   headerCounter.innerText = navRightCount;
 }
@@ -57,9 +56,9 @@ function refreshCountes() {
 //add activity log
 function addActivityLog(assignName) {
   const time = new Date().toLocaleTimeString();
-  const logEntry = document.createElement("p");
-  logEntry.textContent = `You have completed the task "${assignName}" at ${time}`;
-  logEntry.classList.add(
+  const newLogAc = document.createElement("p");
+  newLogAc.textContent = `You have completed the task "${assignName}" at ${time}`;
+  newLogAc.classList.add(
     "text-gray-600",
     "font-semibold",
     "bg-[#f4f7ff]",
@@ -67,7 +66,7 @@ function addActivityLog(assignName) {
     "rounded-lg",
     "my-3"
   );
-  activitySection.appendChild(logEntry);
+  activitySection.appendChild(newLogAc);
 }
 
 for (let i = 0; i < cardButtons.length; i++) {
