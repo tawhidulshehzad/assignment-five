@@ -13,3 +13,7 @@ document.getElementById("blog").addEventListener("click", function () {
   window.location.href = "blog.html";
 });
 
+const taskCounter = document.getElementById("task-counter");
+const navCounter = document.getElementById("nav-counter");
+const activitySection = document.getElementById("activity-log");
+const clearHistoryBtn = document.getElementById("clear-history");
